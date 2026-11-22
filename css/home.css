@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap');
+
+
+:root{
+    --fundo:#080d1a;
+    --superfice:#111b30;
+    --cor-primaria:#00d9ff;
+    --cor-secundaria:#8b5cf6;
+    --texto-principal:#f5f7ff;
+    --texto-secundario:#a5b1c8;
+    --fonte-principal:'Inter', sans-serif;
+    --fonte-titulos:'Orbitron', sans-serif;
+}
+
+.inicializacaoOrbit{
+    min-height: 85vh;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.inicializacaoOrbit h1 {
+    max-width: 1000px;
+
+    font-family: var(--fonte-titulos);
+    font-size: clamp(2rem, 5vw, 4.5rem);
+
+    font-weight: 800;
+    line-height: 1.2;
+
+    color: var(--texto-principal);
+    letter-spacing: 2px;
+
+    text-shadow: 0 0 10px rgba(0,217,255,0.25),
+    0 0 30px rgba(0,217,255,0.12);
+}
+
+.inicializacaoOrbit h2{
+    margin-top: 20px;
+
+    font-family: var(--fonte-principal);
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+
+    font-weight: 600;
+    color: var(--cor-primaria);
+
+    letter-spacing: 3px;
+}
+
+.inicializacaoOrbit p{
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
+    font-weight: 400;
+
+    line-height: 1.8;
+    color: var(--texto-secundario);
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.inicializacaoOrbit h1{
+    animation: aparecer 1s ease forwards;
+}
+
+.inicializacaoOrbit h2{
+    animation: aparecer 1s ease 0.2s forwards;
+}
+
+.inicializacaoOrbit p{
+    animation: aparecer 1s ease 0.4s forwards;
+}
+
+.introducao{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 100px 30px;
+
+    text-align: center;
+}
+
+.section-tag{
+    color: var(--cor-primaria);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+
+    animation: aparecer 1s ease 0.2s forwards;
+}
+
+.introducao h2{
+    max-width: 800px;
+
+    font-family: var(--fonte-titulos);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+
+    font-weight: 700;
+    line-height: 1.4;
+
+    color: var(--texto-principal);
+
+     animation: aparecer 1s ease 0.2s forwards;
+}
+
+.introducao p{
+    max-width: 700px;
+
+    margin-top: 25px;
+
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
+    line-height: 1.8;
+
+    color: var(--texto-secundario);
+
+     animation: aparecer 1s ease 0.4s forwards;
+}
+
+.introducao h2 span{
+    color: var(--cor-primaria);
+
+    text-shadow: 0 0 12px rgba(0,217,255,0.25);
+}
+
+.exploracao{
+    padding: 100px 10%;
+
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+
+    text-align: center;
+
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.exploracao h2{
+    font-family: var(--fonte-titulos);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+
+    font-weight: 700;
+    color: var(--texto-principal);
+
+    text-shadow: 0 0 12px rgba(0,217,255,0.25);
+
+    margin-bottom: 20px;
+
+    animation: aparecer 1s ease 0.2s forwards;
+}
+
+.exploracao span{
+    max-width: 700px;
+
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
+    line-height: 1.8;
+
+    color: var(--cor-primaria);
+
+    animation: aparecer 1s ease 0.2s forwards;
+}
+
+.exploracao a{
+    display: inline-block;
+
+    padding: 15px 35px;
+
+    font-family: var(--texto-principal);
+    font-size: 0.95rem;
+    font-weight: 700;
+
+    color: var(--fundo);
+    background: var(--cor-primaria);
+
+    text-decoration: none;
+    border-radius: 8px;
+   transition: all 0.3s ease;
+}
+
+.exploracao a:hover{
+    background: var(--cor-secundaria);
+
+    color: var(--texto-principal);
+
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+
+    transform: translateY(-3px);
+}
+
+@media (max-width:768px) {
+    .exploracao{padding: 80px 25px;}  
+    
+    .exploracao span{
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+    }
+
+    .exploracao h2{
+        font-size: clamp(1.5rem, 6vw, 2.2rem);
+    }
+
+    .exploracao a{
+        padding: 13px 28px;
+        font-size: 0.85rem;
+    }
+}

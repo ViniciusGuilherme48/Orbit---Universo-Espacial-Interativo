@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/sistemaSolar.css">
+    <title>Sistema Solar Orbit</title>
+</head>
+
+<body>
+    <header class="cabecalho-principal">
+        <h2>Orbit - Explore o universo </h2>
+        <nav class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="sistemaSolar.html">Sistema Solar</a>
+            <a href="universo.html">Universo</a>
+        </nav>
+    </header>
+
+    <main class="conteudo-principal">
+        <section class="solar">
+            <h1>O Sistema Solar</h1>
+
+            <p>
+                Oito planetas. Uma estrela. Infinitas possibilidades de descobertas. Explore os mundos que orbitam nossa
+                estrela.
+            </p>
+        </section>
+
+        <section class="exploracaoSolar">
+            <div>
+                <span>Exploração interativa</span>
+                <h2>Escolha seu destino</h2>
+            </div>
+
+            <div class="visualizacaoSolar">
+                <div class="sol" title="sol"></div>
+                <div class="orbitMercurio">
+                    <button class="planetaMercurio" data-planet="mercurio" aria-label="Explorar Mercúrio"></button>
+                </div>
+                <div class="orbitVenus">
+                    <button class="planetaVenus" data-planet="venus" aria-label="Explorar Vênus"></button>
+                </div>
+                <div class="orbitTerra">
+                    <button class="planetaTerra" data-planet="terra" aria-label="Explorar Terra"></button>
+                </div>
+                <div class="orbitMarte">
+                    <button class="planetaMarte" data-planet="marte" aria-label="Explorar Marte"></button>
+                </div>
+                <div class="orbitJupiter">
+                    <button class="planetaJupiter" data-planet="jupiter" aria-label="Explorar Júpiter"></button>
+                </div>
+                <div class="orbitSaturno">
+                    <button class="planetaSaturno" data-planet="saturno" aria-label="Explorar Saturno"></button>
+                </div>
+                <div class="orbitUrano">
+                    <button class="planetaUrano" data-planet="urano" aria-label="Explorar Urano"></button>
+                </div>
+                <div class="orbitNetuno">
+                    <button class="planetaNetuno" data-planet="netuno" aria-label="Explorar Netuno"></button>
+                </div>
+            </div>
+
+            <p class="Dicainteracao">
+                Selecione um planeta para iniciar a exploração.
+            </p>
+
+        </section>
+
+        <section class="informacoesPlaneta" id="informacoesPlaneta">
+            <div class="detalhePlaneta">
+                <span class="section-tag">DESTINO SELECIONADO</span>
+                <h2 id="nomePlaneta"></h2>
+
+                <p id="descricacaoPlaneta">
+                </p>
+
+                <div class="statusPlanet">
+                    <div>
+                        <span>Diâmetro</span>
+                        <strong id="diametroPlaneta"></strong>
+                    </div>
+                    <div>
+                        <span>Temperatura média</span>
+                        <strong id="temperaturaPlaneta"></strong>
+                    </div>
+                    <div>
+                        <span>Distancia do Sol</span>
+                        <strong id="distanciaPlaneta"></strong>
+                    </div>
+                     <button id="planetaFavorito" class="btn-secundario">
+                    ☆ Adicionar aos favoritos
+                </button>
+                </div>
+               
+            </div>
+        </section>
+        <section class="favoritosPlanetas">
+            <div class="cabecalhoFavoritos">
+                <span class="section-tag">SUA COLEÇÃO</span>
+                <h2>Seus destinos favoritos</h2>
+                <p>Reúna os mundos que despertaram sua curiosidade.</p>
+            </div>
+
+            <div class="listaFavoritos" id="listaFavoritos">
+                <!-- Os planetas favoritos serão inseridos pelo JavaScript -->
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <p>UMA NOVA PERSPECTIVA SOBRE O COSMO</p>
+        <P>Desenvolvido por Vinicius Guilherme</P>
+    </footer>
+    <script src="../js/sistemaSolar.js"></script>
+</body>
+
+</html>

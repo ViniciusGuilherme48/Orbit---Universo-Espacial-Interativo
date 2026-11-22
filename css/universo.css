@@ -1,0 +1,583 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    position: relative;
+}
+
+#campoEstelar {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.heroUniverso {
+    min-height: 90vh;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 100px 10%;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(0, 217, 255, 0.08),
+            transparent 60%
+        );
+}
+
+.conteudoHero {
+    max-width: 950px;
+    animation: surgir 1s ease forwards;
+}
+
+.heroUniverso h1 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    margin: 25px 0;
+
+    font-family: var(--fonte-titulos);
+    font-size: clamp(2.5rem, 7vw, 5.5rem);
+    font-weight: 800;
+
+    color: var(--texto-principal);
+    letter-spacing: 3px;
+}
+
+.heroUniverso h1 span {
+    color: var(--cor-primaria);
+    text-shadow: 0 0 30px rgba(0, 217, 255, 0.4);
+}
+
+.heroUniverso p {
+    max-width: 700px;
+    margin: 0 auto 35px;
+
+    color: var(--texto-secundario);
+    font-family: var(--fonte-principal);
+    font-size: 1.05rem;
+    line-height: 1.9;
+}
+
+.btn-primario {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 15px 28px;
+
+    border: 1px solid var(--cor-primaria);
+    border-radius: 8px;
+
+    background: rgba(0, 217, 255, 0.08);
+
+    color: var(--cor-primaria);
+    font-family: var(--fonte-principal);
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.btn-primario:hover {
+    background: var(--cor-primaria);
+    color: var(--fundo);
+
+    box-shadow: 0 0 25px rgba(0, 217, 255, 0.35);
+
+    transform: translateY(-4px);
+}
+
+.indicadorScroll {
+    position: absolute;
+    bottom: 35px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    color: var(--texto-secundario);
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+}
+
+.indicadorScroll span {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+    background: var(--cor-primaria);
+
+    box-shadow: 0 0 12px var(--cor-primaria);
+
+    animation: pulsarIndicador 1.5s infinite alternate;
+}
+
+
+
+.introducaoUniverso {
+    max-width: 950px;
+
+    margin: 0 auto;
+    padding: 100px 30px;
+
+    text-align: center;
+}
+
+.introducaoUniverso h2 {
+    margin: 20px 0;
+
+    font-family: var(--fonte-titulos);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+
+    color: var(--texto-principal);
+}
+
+.introducaoUniverso h2 span {
+    color: var(--cor-secundaria);
+}
+
+.introducaoUniverso p {
+    max-width: 750px;
+    margin: auto;
+
+    color: var(--texto-secundario);
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+
+.secaoCosmica,
+.secaoCosmicaReversa {
+    width: 100%;
+    max-width: 1250px;
+
+    margin: 0 auto;
+    padding: 90px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.secaoCosmicaReversa {
+    flex-direction: row-reverse;
+}
+
+.imagemCosmica {
+    position: relative;
+
+    width: 52%;
+    height: 380px;
+
+    flex-shrink: 0;
+
+    border-radius: 18px;
+    overflow: hidden;
+
+    border: 1px solid rgba(0, 217, 255, 0.2);
+
+    box-shadow: 0 0 35px rgba(0, 217, 255, 0.07);
+}
+
+.imagemCosmica img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.7s ease, filter 0.7s ease;
+}
+
+.imagemCosmica:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.15);
+}
+
+.numeroCosmico {
+    position: absolute;
+    bottom: 20px;
+    left: 25px;
+
+    font-family: var(--fonte-titulos);
+    font-size: 3rem;
+    font-weight: 800;
+
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 217, 255, 0.7);
+}
+
+.conteudoCosmico {
+    flex: 1;
+}
+
+.conteudoCosmico h2 {
+    margin: 20px 0;
+
+    font-family: var(--fonte-titulos);
+    font-size: clamp(2rem, 4vw, 3rem);
+
+    color: var(--texto-principal);
+}
+
+.conteudoCosmico p {
+    margin-bottom: 30px;
+
+    font-family: var(--fonte-principal);
+    font-size: 0.95rem;
+    line-height: 1.9;
+
+    color: var(--texto-secundario);
+}
+
+.conteudoCosmico .btn-secundario {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.encerramentoUniverso {
+    padding: 130px 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(139, 92, 246, 0.12),
+            transparent 65%
+        );
+}
+
+.encerramentoUniverso h2 {
+    max-width: 850px;
+
+    margin: 25px 0;
+
+    font-family: var(--fonte-titulos);
+    font-size: clamp(2rem, 5vw, 3.8rem);
+
+    color: var(--texto-principal);
+}
+
+.encerramentoUniverso h2 span {
+    color: var(--cor-primaria);
+}
+
+.encerramentoUniverso p {
+    margin-bottom: 30px;
+
+    color: var(--texto-secundario);
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   MODAL DE EXPLORAÇÃO
+========================================= */
+
+.modalCosmico {
+    position: fixed;
+    inset: 0;
+
+    z-index: 3000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(3, 7, 18, 0.88);
+    backdrop-filter: blur(12px);
+}
+
+.modalCosmico.ativo {
+    display: flex;
+    animation: aparecerModal 0.3s ease;
+}
+
+.conteudoModal {
+    position: relative;
+
+    width: 100%;
+    max-width: 700px;
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 45px;
+
+    background: var(--superfice);
+
+    border: 1px solid rgba(0, 217, 255, 0.3);
+    border-radius: 20px;
+
+    box-shadow: 0 0 50px rgba(0, 217, 255, 0.12);
+
+    animation: subirModal 0.4s ease;
+}
+
+.fecharModal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+
+    width: 38px;
+    height: 38px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: var(--texto-principal);
+    font-size: 1.7rem;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+.fecharModal:hover {
+    color: var(--cor-primaria);
+    border-color: var(--cor-primaria);
+    transform: rotate(90deg);
+}
+
+.conteudoModal h2 {
+    margin: 20px 0;
+
+    font-family: var(--fonte-titulos);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+
+    color: var(--cor-primaria);
+}
+
+.conteudoModal > p {
+    color: var(--texto-secundario);
+    font-family: var(--fonte-principal);
+    line-height: 1.9;
+}
+
+.curiosidadeModal {
+    margin-top: 30px;
+    padding: 25px;
+
+    border-left: 3px solid var(--cor-secundaria);
+    border-radius: 8px;
+
+    background: rgba(139, 92, 246, 0.08);
+}
+
+.curiosidadeModal span {
+    display: block;
+    margin-bottom: 12px;
+
+    color: var(--cor-secundaria);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.curiosidadeModal p {
+    color: var(--texto-principal);
+    line-height: 1.8;
+}
+
+.dadosModal {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.dadoCosmico {
+    padding: 18px;
+
+    background: rgba(0, 217, 255, 0.05);
+
+    border: 1px solid rgba(0, 217, 255, 0.12);
+    border-radius: 10px;
+}
+
+.dadoCosmico span {
+    display: block;
+    margin-bottom: 10px;
+
+    color: var(--texto-secundario);
+    font-size: 0.75rem;
+}
+
+.dadoCosmico strong {
+    color: var(--cor-primaria);
+    font-family: var(--fonte-titulos);
+    font-size: 0.95rem;
+}
+
+
+@keyframes surgir {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulsarIndicador {
+    from {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.3);
+    }
+}
+
+@keyframes aparecerModal {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes subirModal {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .secaoCosmica,
+    .secaoCosmicaReversa {
+        gap: 40px;
+        padding: 70px 5%;
+    }
+
+    .imagemCosmica {
+        width: 48%;
+        height: 320px;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .heroUniverso {
+        min-height: 80vh;
+        padding: 80px 7%;
+    }
+
+    .heroUniverso h1 {
+        letter-spacing: 1px;
+    }
+
+    .secaoCosmica,
+    .secaoCosmicaReversa {
+        flex-direction: column;
+        gap: 35px;
+        padding: 55px 7%;
+    }
+
+    .imagemCosmica {
+        width: 100%;
+        height: 280px;
+    }
+
+    .conteudoCosmico {
+        width: 100%;
+    }
+
+    .introducaoUniverso {
+        padding: 75px 7%;
+    }
+
+    .encerramentoUniverso {
+        padding: 90px 7%;
+    }
+
+    .conteudoModal {
+        padding: 40px 25px 30px;
+    }
+
+}
+
+@media (max-width: 450px) {
+
+    .heroUniverso p {
+        font-size: 0.9rem;
+    }
+
+    .imagemCosmica {
+        height: 230px;
+    }
+
+    .dadosModal {
+        grid-template-columns: 1fr;
+    }
+
+    .indicadorScroll {
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+    }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

@@ -1,0 +1,553 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --fundo: #080d1a;
+    --superfice: #111b30;
+    --cor-primaria: #00d9ff;
+    --cor-secundaria: #8b5cf6;
+    --texto-principal: #f5f7ff;
+    --texto-secundario: #a5b1c8;
+    --fonte-principal: 'Inter', sans-serif;
+    --fonte-titulos: 'Orbitron', sans-serif;
+}
+
+.solar {
+    min-height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.solar h1 {
+    font-family: var(--fonte-titulos);
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 800;
+    color: var(--texto-principal);
+    letter-spacing: 2px;
+    text-shadow: 0 0 15px rgba(0, 217, 255, 0.25);
+    animation: aparecer 1s ease forwards;
+}
+
+.solar p {
+    max-width: 700px;
+    margin-top: 25px;
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--texto-secundario);
+    animation: aparecer 1s ease 0.3s forwards;
+}
+
+.exploracaoSolar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 60px 20px 100px;
+    text-align: center;
+    overflow: hidden;
+    gap: 20px;
+}
+
+.exploracaoSolar span {
+    display: inline-block;
+    font-family: var(--fonte-principal);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--cor-primaria);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: aparecer 1s ease 0.3s forwards;
+}
+
+.exploracaoSolar h2 {
+    font-family: var(--fonte-titulos);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: var(--texto-principal);
+    margin-bottom: 30px;
+    animation: aparecer 1s ease 0.5s forwards;
+}
+
+.visualizacaoSolar {
+    position: relative;
+    width: min(900px, 100%);
+    aspect-ratio: 1 / 1;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin: 0 auto;
+}
+
+.sol {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background: radial-gradient(
+        circle,
+        #fff7ad 0%,
+        #ffcc33 40%,
+        #ff8c00 75%,
+        #ff5e00 100%
+    );
+    border-radius: 50%;
+    box-shadow:
+        0 0 20px rgba(255, 190, 50, 0.9),
+        0 0 50px rgba(255, 140, 0, 0.6),
+        0 0 100px rgba(255, 100, 0, 0.3);
+    z-index: 10;
+    animation: pulsar 3s ease-in-out infinite alternate;
+}
+
+@keyframes pulsar {
+    from {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+
+    to {
+        transform: scale(1.12);
+        filter: brightness(1.3);
+    }
+}
+
+.orbitMercurio,
+.orbitVenus,
+.orbitTerra,
+.orbitMarte,
+.orbitJupiter,
+.orbitSaturno,
+.orbitUrano,
+.orbitNetuno {
+    position: absolute;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.orbitMercurio {
+    width: 17.78%;
+}
+
+.orbitVenus {
+    width: 26.67%;
+}
+
+.orbitTerra {
+    width: 36.67%;
+}
+
+.orbitMarte {
+    width: 46.67%;
+}
+
+.orbitJupiter {
+    width: 57.78%;
+}
+
+.orbitSaturno {
+    width: 70%;
+}
+
+.orbitUrano {
+    width: 82.22%;
+}
+
+.orbitNetuno {
+    width: 94.44%;
+}
+
+.orbitMercurio button,
+.orbitVenus button,
+.orbitTerra button,
+.orbitMarte button,
+.orbitJupiter button,
+.orbitSaturno button,
+.orbitUrano button,
+.orbitNetuno button {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    padding: 0;
+    outline: none;
+    transition: box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.planetaMercurio {
+    width: 10px;
+    height: 10px;
+    background-color: #a5a5a5;
+    box-shadow: 0 0 10px rgba(165, 165, 165, 0.6);
+}
+
+.planetaVenus {
+    width: 15px;
+    height: 15px;
+    background-color: #e6b566;
+    box-shadow: 0 0 12px rgba(230, 181, 102, 0.7);
+}
+
+.planetaTerra {
+    width: 17px;
+    height: 17px;
+    background-color: #168cff;
+    box-shadow: 0 0 12px rgba(22, 140, 255, 0.8);
+}
+
+.planetaMarte {
+    width: 13px;
+    height: 13px;
+    background-color: #e65c36;
+    box-shadow: 0 0 12px rgba(230, 92, 54, 0.7);
+}
+
+.planetaJupiter {
+    width: 35px;
+    height: 35px;
+    background-color: #d6a477;
+    box-shadow: 0 0 18px rgba(214, 164, 119, 0.7);
+}
+
+.planetaSaturno {
+    position: relative;
+    z-index: 1;
+    width: 30px;
+    height: 30px;
+    background-color: #e6d09b;
+    box-shadow: 0 0 16px rgba(230, 208, 155, 0.7);
+}
+
+.planetaSaturno::after {
+    content: "";
+    position: absolute;
+    width: 48px;
+    height: 12px;
+    border: 3px solid rgba(230, 208, 155, 0.9);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    z-index: -1;
+}
+
+.planetaUrano {
+    width: 23px;
+    height: 23px;
+    background-color: #7de4e8;
+    box-shadow: 0 0 15px rgba(125, 228, 232, 0.7);
+}
+
+.planetaNetuno {
+    width: 22px;
+    height: 22px;
+    background-color: #3156d8;
+    box-shadow: 0 0 15px rgba(49, 86, 216, 0.8);
+}
+
+.visualizacaoSolar button:hover {
+    filter: brightness(1.8);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
+    transform: translate(-50%, -50%) scale(1.6);
+    z-index: 20;
+}
+
+@keyframes orbitar {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.orbitMercurio {
+    animation: orbitar 8s linear infinite;
+}
+
+.orbitVenus {
+    animation: orbitar 12s linear infinite;
+}
+
+.orbitTerra {
+    animation: orbitar 16s linear infinite;
+}
+
+.orbitMarte {
+    animation: orbitar 20s linear infinite;
+}
+
+.orbitJupiter {
+    animation: orbitar 28s linear infinite;
+}
+
+.orbitSaturno {
+    animation: orbitar 36s linear infinite;
+}
+
+.orbitUrano {
+    animation: orbitar 44s linear infinite;
+}
+
+.orbitNetuno {
+    animation: orbitar 52s linear infinite;
+}
+
+.orbitMercurio:has(button:hover),
+.orbitVenus:has(button:hover),
+.orbitTerra:has(button:hover),
+.orbitMarte:has(button:hover),
+.orbitJupiter:has(button:hover),
+.orbitSaturno:has(button:hover),
+.orbitUrano:has(button:hover),
+.orbitNetuno:has(button:hover) {
+    animation-play-state: paused;
+}
+
+.informacoesPlaneta {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 60px 20px 100px;
+}
+
+.detalhePlaneta {
+    width: 100%;
+    max-width: 850px;
+    padding: 45px;
+    background: var(--superfice);
+    border: 1px solid rgba(0, 217, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.05);
+}
+
+.section-tag {
+    display: inline-block;
+    color: var(--cor-primaria);
+    font-family: var(--fonte-principal);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.detalhePlaneta h2 {
+    color: var(--texto-principal);
+    font-family: var(--fonte-titulos);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.detalhePlaneta p {
+    color: var(--texto-secundario);
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.statusPlanet {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.statusPlanet div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px;
+    background-color: rgba(0, 217, 255, 0.05);
+    border: 1px solid rgba(0, 217, 255, 0.15);
+    border-radius: 12px;
+}
+
+.statusPlanet span {
+    color: var(--texto-secundario);
+    font-family: var(--fonte-principal);
+    font-size: 0.85rem;
+}
+
+.statusPlanet strong {
+    color: var(--cor-primaria);
+    font-family: var(--fonte-titulos);
+    font-size: 1rem;
+}
+
+.favoritosPlanetas {
+    width: 100%;
+    padding: 60px 10% 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.cabecalhoFavoritos {
+    margin-bottom: 40px;
+}
+
+.cabecalhoFavoritos h2 {
+    font-family: var(--fonte-titulos);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    color: var(--texto-principal);
+    margin-bottom: 15px;
+}
+
+.cabecalhoFavoritos p {
+    font-family: var(--fonte-principal);
+    color: var(--texto-secundario);
+    line-height: 1.7;
+}
+
+.listaFavoritos {
+    width: 100%;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 25px;
+}
+
+.cardFavorito {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 25px;
+    background: var(--superfice);
+    border: 1px solid rgba(0, 217, 255, 0.15);
+    border-radius: 16px;
+    text-align: left;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cardFavorito:hover {
+    transform: translateY(-6px);
+    border-color: var(--cor-primaria);
+    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.1);
+}
+
+.cardFavorito h3 {
+    color: var(--cor-primaria);
+    font-family: var(--fonte-titulos);
+    font-size: 1.2rem;
+}
+
+.cardFavorito p {
+    color: var(--texto-secundario);
+    font-family: var(--fonte-principal);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .informacoesPlaneta {
+        padding: 40px 15px 60px;
+    }
+
+    .detalhePlaneta {
+        padding: 30px 20px;
+    }
+
+    .detalhePlaneta h2 {
+        font-size: 2rem;
+    }
+
+    .statusPlanet {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .favoritosPlanetas {
+        padding: 50px 20px 70px;
+    }
+
+    .listaFavoritos {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+    .exploracaoSolar {
+        padding: 40px 15px 70px;
+        gap: 15px;
+    }
+
+    .visualizacaoSolar {
+        width: min(100%, 600px);
+    }
+
+    .sol {
+        width: 55px;
+        height: 55px;
+    }
+
+    .planetaJupiter {
+        width: 25px;
+        height: 25px;
+    }
+
+    .planetaSaturno {
+        width: 23px;
+        height: 23px;
+    }
+
+    .planetaSaturno::after {
+        width: 38px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 500px) {
+    .solar {
+        min-height: 55vh;
+        padding: 60px 20px;
+    }
+
+    .solar p {
+        font-size: 0.9rem;
+    }
+
+    .exploracaoSolar span {
+        font-size: 0.7rem;
+        letter-spacing: 3px;
+    }
+
+    .exploracaoSolar h2 {
+        font-size: 1.6rem;
+    }
+
+    .visualizacaoSolar {
+        width: 100%;
+    }
+
+    .detalhePlaneta {
+        padding: 25px 18px;
+    }
+
+    .detalhePlaneta h2 {
+        font-size: 1.7rem;
+    }
+
+    .statusPlanet div {
+        padding: 16px;
+    }
+}
